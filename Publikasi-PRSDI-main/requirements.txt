@@ -1,0 +1,16 @@
+streamlit
+plotly
+pandas
+pyvis
+gspread
+oauth2client
+ipython
+wordcloud
+matplotlib
+openpyxl
+nltk
+gspread
+google-auth
+google-auth-oauthlib
+streamlit_autorefresh
+scikit-learn

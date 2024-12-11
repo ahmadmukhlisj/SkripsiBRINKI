@@ -1,1 +1,1 @@
-# SkripsiBRINKI
+# MagangKIBRIN
