@@ -115,12 +115,8 @@ def preprocessing(df_KI):
     df_ki = hapus_baris_kosong(df_ki, "JENIS")
     df_ki['Periode Input'] = df_ki['Periode Input'].apply(convert_month)
     df_ki['Periode Input'] = pd.to_datetime(df_ki['Periode Input'], format='%B %d, %Y', errors='coerce')
- #   df_ki['NO PENDAFTARAN'] = df_ki['NO PENDAFTARAN'].replace(r'^\s*$', None, regex=True)
- #   df_ki['NO PENDAFTARAN'] = df_ki['NO PENDAFTARAN'].fillna('Unknown')
     df_ki['TANGGAL PENDAFTARAN'] = df_ki['TANGGAL PENDAFTARAN'].replace(r'^\s*$', None, regex=True)
     df_ki['TANGGAL PENDAFTARAN'] = df_ki['TANGGAL PENDAFTARAN'].fillna('Belum Terdaftar')
- #  df_ki['NO SERTIFIKAT'] = df_ki['NO SERTIFIKAT'].replace(r'^\s*$', None, regex=True)
- #   df_ki['NO SERTIFIKAT'] = df_ki['NO SERTIFIKAT'].fillna('Unknown')
     df_ki['TANGGAL SERTIFIKAT'] = df_ki['TANGGAL SERTIFIKAT'].replace(r'^\s*$', None, regex=True)
     df_ki['TANGGAL SERTIFIKAT'] = df_ki['TANGGAL SERTIFIKAT'].fillna('Belum Tersertifikasi')
     return df_ki
@@ -539,6 +535,7 @@ def network_graph(df_ki_authors, df_ki_inventor):
     
     # Tampilkan di Streamlit
     #st.pyplot(fig)
+
 def generate_wordcloud(dataframe, column_name):
     # Gabungkan semua teks di kolom menjadi satu string
     text = " ".join(title for title in dataframe[column_name])
@@ -605,15 +602,15 @@ def generate_wordcloud(dataframe, column_name):
     # Membuat DataFrame untuk topik
     df_topics = pd.DataFrame(topics, columns=['Topik', 'Lingkup', 'Kata-Kata'])
     #Create Two Columns
-    col1, col2 = st.columns(2)
-    with col1:
+    #col1, col2 = st.columns(2)
+    #with col1:
         # Menampilkan tabel TF-IDF
-        st.write("Kata-kata penting berdasarkan TF-IDF:")
-        st.write(df_important_words)
-    with col2: 
-        # Menampilkan tabel
-        st.write("Topik yang dihasilkan oleh LDA:")
-        st.write(df_topics)
+        #st.write("Kata-kata penting berdasarkan TF-IDF:")
+        #st.write(df_important_words)
+    #with col2: 
+    # Menampilkan tabel
+    st.write("Topik yang dihasilkan oleh LDA:")
+    st.write(df_topics)
 
 def network(df_ki):
     df_graph = df_ki[['JUDUL', 'KELOMPOK RISET']]
@@ -682,8 +679,6 @@ def main():
     fig_bar2 = plot_barchart(df_ki, 'TANGGAL SERTIFIKAT')
     fig_bar4 = plot_barchart(df_ki, 'TANGGAL PENDAFTARAN')
     fig_bar3 = plot_barchart(df_ki, 'STATUS')
-  # fig_pie2 = px.pie(df_ki,'TANGGAL PENDAFTARAN')
-  # fig_pie1 = plot_piechart(df_ki) 
 
     # Create two columns
     col1, col2 = st.columns(2)
