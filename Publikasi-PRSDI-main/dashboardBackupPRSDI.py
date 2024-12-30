@@ -46,7 +46,7 @@ def get_data(sheets):
 # Sheets Kekayaan Intelektual
 # df_KI = pd.read_excel('Form Capaian PRSDI.xlsx', sheet_name='KI')
 # dfl_KI = get_data()
-df_KI = get_data(0)
+df_KI = get_data(1)
 df_sivitas = pd.read_excel('Sivitas_PRSDI.xlsx')
 
 #Data Preprocessing
