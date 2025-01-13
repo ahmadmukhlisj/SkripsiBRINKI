@@ -143,6 +143,7 @@ def pie_chart(df_ki):
     # Add trace for all data
     all_data = df_ki.groupby('JENIS')['JUDUL'].count().reset_index(name='Count')
     fig.add_trace(px.pie(all_data, values='Count', names='JENIS', hole=0.3).data[0])
+    fig.update_traces(textinfo='label+value+percent', textposition='inside')
 
     # Update layout to include dropdown (remove 'hole' from here)
     fig.update_layout(
