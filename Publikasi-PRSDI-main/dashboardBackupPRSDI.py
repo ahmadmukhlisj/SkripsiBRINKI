@@ -597,10 +597,10 @@ def generate_wordcloud(dataframe, column_name):
     #    st.write(f"Topik {index + 1}: {', '.join(top_features)}")
     topics = []
     lingkup = [
-        "Informasi",
-        "Geografis",
+        "Informasi Geografis",
+        "Analisis",
         "Pengolahan",
-        "Bahasa",
+        "Teknologi",
         "Proses"
     ]    
     for index, topic in enumerate(lda.components_):
