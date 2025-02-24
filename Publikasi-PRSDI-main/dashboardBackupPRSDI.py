@@ -550,6 +550,14 @@ def generate_wordcloud(dataframe, column_name):
     stopwords.add('Based')
     stopwords.add('Indonesia')
     stopwords.add('Analytics')
+    stopwords.add('dan')
+    stopwords.add('dengan')
+    stopwords.add('OK')
+    stopwords.add('dalam')
+    stopwords.add('untuk')
+    stopwords.add('pada')
+    stopwords.add('ke')
+    stopwords.add('selanjutnya')
 
     # Membuat WordCloud
     wordcloud = WordCloud(width=1920, height=1080, background_color='white', colormap='winter_r', stopwords=stopwords).generate(text)
