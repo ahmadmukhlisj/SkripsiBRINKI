@@ -19,7 +19,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 sys.stderr.reconfigure(encoding='utf-8')
 
 st.set_page_config(layout="wide")
-st.title('Dashboard Capaian PRSDI')
+st.title('Dashboard Capaian KI PRSDI')
 # Refresh page every 60 seconds
 st_autorefresh(interval=60 * 1000)
 
@@ -735,7 +735,7 @@ def main():
         df_styled = df_filtered.style.apply(highlight_rows, axis=1)
         st.dataframe(df_styled, use_container_width=True)
     with col2:
-        st.subheader("Judul KI yang Terverifikasi")
+        st.subheader("Judul KI yang Tersertifikasi")
         df_ki['NO SERTIFIKAT'] = df_ki['NO SERTIFIKAT'].replace(r'^\s*$', None, regex=True)
         df_filtered = df_ki[['JUDUL', 'JENIS', 'NO SERTIFIKAT']]
         df_filtered = hapus_baris_kosong(df_filtered, 'NO SERTIFIKAT')
