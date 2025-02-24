@@ -556,7 +556,7 @@ def generate_wordcloud(dataframe, column_name):
     stopwords.add('dalam')
     stopwords.add('untuk')
     stopwords.add('pada')
-    stopwords.add('ke')
+    stopwords.add('ke', 'di')
     stopwords.add('selanjutnya')
 
     # Membuat WordCloud
