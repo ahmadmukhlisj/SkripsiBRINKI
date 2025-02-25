@@ -559,7 +559,7 @@ def generate_wordcloud(dataframe, column_name):
     stopwords.add('ke')
     stopwords.add('di')
     stopwords.add('selanjutnya')
-
+    stopwords.add('berbasis')
     # Membuat WordCloud
     wordcloud = WordCloud(width=1920, height=1080, background_color='white', colormap='winter_r', stopwords=stopwords).generate(text)
 
