@@ -610,7 +610,7 @@ def generate_wordcloud(dataframe, column_name):
         topics.append([f"Topik {index + 1}", lingkup[index], ', '.join(top_features)])  # Menggunakan lingkup yang sesuai
 
     # Membuat DataFrame untuk topik
-    df_topics = pd.DataFrame(topics, columns=['Topik', 'Lingkup', 'Kata-Kata'])
+    df_topics = pd.DataFrame(topics, columns=['Topik', 'Label', 'Kata-Kata'])
     #Create Two Columns
     #col1, col2 = st.columns(2)
     #with col1:
